@@ -1,0 +1,24 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item">Modification Etudiant</li>
+    </ol>
+</nav>
+{{#if alert}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  {{alert}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
+</div>
+  {{/if}}
+
+
+{{#each rows}}
+<div class="col-sm-4">
+            <div class="container">
+                <form action="/editetudiant/{{this.id_etu}}" class="was-validated" method="POST" novalidate>
+                    {{>etudiant-form}}
+                </form> 
+                </div>
+            </div>
+</div>
+{{/each}} 
